@@ -1,101 +1,207 @@
-import Image from "next/image";
+'use client'
+import Image from 'next/image'
+import { Mail, Phone, MapPin, Globe, Github, Linkedin } from 'lucide-react'
 
-export default function Home() {
+function WorkExperience({ title, company, period, responsibilities }: { title: string; company: string; period: string; responsibilities: string[] }) {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+    <div className="work-experience print:keep-together mb-8">
+      <div className="print:keep-together">
+        <h4 className="text-lg font-semibold mb-1">{title}</h4>
+        <p className="text-sm text-gray-600 mb-2">{company} | {period}</p>
+        <ul className="list-disc pl-5 text-sm text-gray-700 space-y-2 marker:text-gray-500">
+          {responsibilities.map((resp, index) => (
+            <li key={index} className="pl-1">
+              {resp}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
-  );
+  )
+}
+
+function Section({ title, children, className = "" }: { title: string; children: React.ReactNode; className?: string }) {
+  return (
+    <section className={`print:keep-together mb-6 ${className}`}>
+      <h3 className="text-xl font-bold mb-3 text-blue-800 print:text-black">{title}</h3>
+      <div className="print:keep-together">
+        {children}
+      </div>
+    </section>
+  )
+}
+
+export default function CV() {
+  return (
+    <div className="min-h-screen p-4 flex justify-center items-center bg-gray-100 print:bg-white print:p-0">
+      <div className="w-full max-w-[210mm]">
+        <button
+          onClick={() => window.print()}
+          className="mb-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300 ease-in-out print:hidden"
+        >
+          Download CV as PDF
+        </button>
+
+        <div className="bg-white shadow-2xl rounded-lg overflow-hidden print:shadow-none print:rounded-none">
+          <header className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8 print:bg-blue-700 print:bg-none print:py-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <h1 className="text-3xl font-bold print:text-black">HUM SOPHA</h1>
+                <h2 className="text-xl mt-2 print:text-black">Web Developer</h2>
+              </div>
+              <Image
+                src="/Sopha.JPG"
+                alt="Profile"
+                width={130}
+                height={130}
+                className="rounded-full border-4 border-white print:border-2"
+              />
+            </div>
+            <div className="mt-4 flex flex-wrap gap-4 text-sm print:text-black">
+              <ContactInfo icon={<Mail size={16} />} text="sopha.humm@gmail.com" />
+              <ContactInfo icon={<Phone size={16} />} text="015-607-950" />
+              <ContactInfo icon={<MapPin size={16} />} text="Somkol sal II, Beng Topun, Mean Chey, Phnom penh" />
+              <ContactInfo icon={<Globe size={16} />} text="https://sophahum.vercel.app" link="https://sophahum.vercel.app" />
+              <ContactInfo icon={<Github size={16} />} text="GitHub" link="https://github.com/yourusername" />
+              <ContactInfo icon={<Linkedin size={16} />} text="LinkedIn" link="https://linkedin.com/in/yourusername" />
+            </div>
+          </header>
+
+          <main className="p-8 print:p-6">
+            <Section title="Professional Summary">
+              <p className="text-sm text-gray-700">
+                Dedicated Web developer with over 4 years of professional experience at Peth Yoeung Co., Ltd. Progressed from intern to web developer, demonstrating strong leadership with learning and technical skills. Expertise in developing and building web applications, maintaining web applications, optimizing code for performance, and implementing new features. Proven track record of successfully integrating complex systems, such as API payments with banks, and mentoring junior developers.
+              </p>
+            </Section>
+
+            <Section title="Work Experience">
+              <div className="space-y-6 print:keep-together">
+                <WorkExperience
+                  title="Web Developer"
+                  company="Peth Yoeung Co., Ltd"
+                  period="December 2023 - Present"
+                  responsibilities={[
+                    "Lead and manage web development projects, collaborating with cross-functional teams to ensure timely delivery of high-quality applications",
+                    "Spearhead code optimization initiatives, resulting in a 30% improvement in application performance and responsiveness",
+                    "Design and implement new features based on user feedback, enhancing overall user experience and satisfaction",
+                    "Successfully integrated API payment systems with multiple banks, streamlining financial transactions and improving system efficiency",
+                    "Mentor junior developers, conduct code reviews, and facilitate knowledge sharing sessions to elevate team skills and productivity"
+                  ]}
+                />
+                <WorkExperience
+                  title="Junior Web Developer"
+                  company="Peth Yoeung Co., Ltd"
+                  period="June 2021 - December 2023"
+                  responsibilities={[
+                    "Developed and maintained web applications using Laravel, JavaScript, and PostgreSQL, ensuring robust and scalable solutions",
+                    "Collaborated closely with senior developers to implement complex features and resolve critical issues in a timely manner",
+                    "Actively participated in code reviews, contributing to the improvement of development processes and code quality standards",
+                    "Assisted in the successful migration of legacy systems to modern web technologies, improving system performance and maintainability",
+                    "Implemented responsive design principles, ensuring optimal user experience across various devices and screen sizes"
+                  ]}
+                />
+              </div>
+            </Section>
+
+            <Section title="Projects">
+              <ul className="list-disc pl-5 text-sm text-gray-700 space-y-2 marker:text-gray-500">
+                <li>
+                  Developed a full-stack e-commerce application using Laravel, Vue.js, and PostgreSQL. This project involved designing the database schema, implementing the API, and creating the front-end user interface.
+                </li>
+                <li>
+                  Built a responsive web application for a non-profit organization using React.js, Node.js, and MongoDB. This project involved working with a team to design, develop, and deploy the application.
+                </li>
+                <li>
+                  Created a web application for managing tasks using Next.js, and PostgreSQL. This project involved implementing features such as user authentication, task management, and reporting.
+                </li>
+              </ul>
+            </Section>
+
+            <Section title="Skills">
+              <div className="grid grid-cols-2 gap-6">
+                <SkillCategory
+                  title="Front-End"
+                  skills={["HTML5", "CSS3", "JavaScript ES6", "React.js", "Vue.js", "Next.js", "Nuxt.js", "Astro.js", "Tailwind CSS"]}
+                />
+                <SkillCategory
+                  title="Back-End"
+                  skills={["Node.js", "PHP (Laravel)", "PostgreSQL", "MySQL", "Docker", "Linux OS"]}
+                />
+              </div>
+            </Section>
+
+            <Section title="Education">
+              <Education
+                degree="Bachelor of Science in Software Engineering"
+                school="Royal University of Phnom Penh"
+                period="2017 - 2021"
+              />
+              <Education
+                degree="English Language (Level 1)"
+                school="Australian Centre for Education (ACE)"
+                period="2018 - 2019"
+              />
+            </Section>
+
+            <Section title="Achievements">
+              <ul className="list-disc pl-5 text-sm text-gray-700 space-y-2 marker:text-gray-500">
+                <li>Hard Work Certificate - Awarded for successfully completing an urgent project overnight</li>
+                <li>3-Year Service Recognition - Awarded for dedicated service at Peth Yoeung Co., Ltd (2023)</li>
+                <li>Web Development Professional Certificate - Awarded upon completion of internship at Peth Yoeung Co., Ltd (2021)</li>
+              </ul>
+            </Section>
+
+            <Section title="Languages">
+              <ul className="list-disc pl-5 text-sm text-gray-700 space-y-2 marker:text-gray-500">
+                <li>Khmer (Native)</li>
+                <li>English (Professional working proficiency)</li>
+              </ul>
+            </Section>
+
+            <Section title="References">
+              <p className="text-sm text-gray-700">Available upon request.</p>
+            </Section>
+          </main>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function ContactInfo({ icon, text, link }: { icon: React.ReactNode; text: string; link?: string }) {
+  return (
+    <div className="flex items-center gap-3">
+      <span className="flex-shrink-0">{icon}</span>
+      {link ? (
+        <a href={link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+          {text}
+        </a>
+      ) : (
+        <span>{text}</span>
+      )}
+    </div>
+  )
+}
+
+
+function SkillCategory({ title, skills }: { title: string; skills: string[] }) {
+  return (
+    <div className="print:break-inside-avoid">
+      <h4 className="text-base font-semibold mb-2">{title}</h4>
+      <ul className="list-disc pl-5 text-sm text-gray-700 space-y-2 marker:text-gray-500">
+        {skills.map((skill, index) => (
+          <li key={index} className="pl-1">{skill}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+function Education({ degree, school, period }: { degree: string; school: string; period: string }) {
+  return (
+    <div className="mb-3 print:break-inside-avoid">
+      <h4 className="text-base font-semibold">{degree}</h4>
+      <p className="text-sm text-gray-600">{school} | {period}</p>
+    </div>
+  )
 }
