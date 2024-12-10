@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Modern CV Template
 
-## Getting Started
+A sleek, professional CV/resume builder built with Next.js and TailwindCSS. Create stunning, print-ready resumes that stand out from the crowd.
 
-First, run the development server:
+## ✨ Features
 
+- **Modern Design**: Clean and professional layout with a responsive design
+- **Print Optimized**: Carefully crafted CSS for perfect printing results
+- **Dark/Light Mode**: Automatic theme switching based on system preferences
+- **Responsive Layout**: Looks great on all devices from mobile to desktop
+- **Easy Customization**: Built with TailwindCSS for easy styling
+- **Fast Performance**: Optimized with Next.js for lightning-fast loading
+- **Image Optimization**: Automatic image optimization using Next.js Image component
+- **Export to PDF**: Print your CV directly to PDF format
+
+## 🚀 Tech Stack
+
+- [Next.js 15](https://nextjs.org/) - React Framework
+- [React 19](https://react.dev/) - JavaScript Library
+- [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS Framework
+- [TypeScript](https://www.typescriptlang.org/) - JavaScript with syntax for types
+- [Lucide Icons](https://lucide.dev/) - Beautiful open-source icons
+
+## 🛠️ Getting Started
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/cv-template.git
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📝 Customization
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Edit `app/page.tsx` to customize your CV content. The template is built with components for:
+- Personal Information
+- Work Experience
+- Education
+- Skills
+- Contact Information
 
-## Learn More
+## 📄 License
 
-To learn more about Next.js, take a look at the following resources:
+This project is open source and available under the MIT License.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤝 Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+Built with ❤️ using Next.js and TailwindCSS
