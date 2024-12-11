@@ -62,8 +62,8 @@ export default function CV() {
               <ContactInfo icon={<Phone size={16} />} text="015-607-950" />
               <ContactInfo icon={<MapPin size={16} />} text="Somkol sal II, Beng Topun, Mean Chey, Phnom penh" />
               <ContactInfo icon={<Globe size={16} />} text="https://sophahum.vercel.app" link="https://sophahum.vercel.app" />
-              <ContactInfo icon={<Github size={16} />} text="GitHub" link="https://github.com/yourusername" />
-              <ContactInfo icon={<Linkedin size={16} />} text="LinkedIn" link="https://linkedin.com/in/yourusername" />
+              <ContactInfo icon={<Github size={16} />} text="GitHub" link="https://github.com/SophaHum" />
+              <ContactInfo icon={<Linkedin size={16} />} text="LinkedIn" link="https://www.linkedin.com/in/sopha-hum-b288a419a" />
             </div>
           </header>
 
