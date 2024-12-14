@@ -6,7 +6,6 @@ A sleek, professional CV/resume builder built with Next.js and TailwindCSS. Crea
 
 - **Modern Design**: Clean and professional layout with a responsive design
 - **Print Optimized**: Carefully crafted CSS for perfect printing results
-- **Dark/Light Mode**: Automatic theme switching based on system preferences
 - **Responsive Layout**: Looks great on all devices from mobile to desktop
 - **Easy Customization**: Built with TailwindCSS for easy styling
 - **Fast Performance**: Optimized with Next.js for lightning-fast loading
@@ -51,6 +50,7 @@ Edit `app/page.tsx` to customize your CV content. The template is built with com
 - Work Experience
 - Education
 - Skills
+- Projects
 - Contact Information
 
 ## 📄 License
