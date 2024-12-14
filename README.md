@@ -24,7 +24,7 @@ A sleek, professional CV/resume builder built with Next.js and TailwindCSS. Crea
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/cv-template.git
+git clone git@github.com:SophaHum/cv-template.git
 ```
 
 2. Install dependencies:
