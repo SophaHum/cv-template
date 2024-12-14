@@ -98,8 +98,8 @@ export default function CV() {
                 />
                 <ContactInfo
                   icon={<Globe className="w-5 h-5 print:w-4 print:h-4" />}
-                  text="https://sophahum.vercel.app"
-                  link="https://sophahum.vercel.app"
+                  text="https://hum-sopha.vercel.app"
+                  link="https://hum-sopha.vercel.app"
                 />
                 <ContactInfo
                   icon={<Github className="w-5 h-5 print:w-4 print:h-4" />}
@@ -248,6 +248,7 @@ export default function CV() {
                       "Jenkins",
                       "Ansible",
                       "Kubernetes",
+                      "Grafana",
                       "AWS",
                       "Vercel",
                     ]}
