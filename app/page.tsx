@@ -209,7 +209,7 @@ export default function CV() {
                 title="Skills"
                 className="print:break-inside-avoid page-break-before-auto"
               >
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 print:grid-cols-3 gap-6">
                   <SkillCategory
                     title="Front-End"
                     skills={[
