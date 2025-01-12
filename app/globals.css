@@ -21,9 +21,42 @@ body {
 @media print {
   @page {
     size: A4;
-    margin: 0;
+    margin: 0.4cm;
   }
+  
   body {
-    margin: 1cm;
+    margin: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: none;
+    line-height: 1.2;
   }
+
+  .page-break {
+    page-break-before: always;
+  }
+
+  .no-break {
+    page-break-inside: avoid;
+  }
+
+  /* Compact spacing for print */
+  p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+
+  section {
+    margin-bottom: 0.3cm !important;
+  }
+
+  h2, h3 {
+    margin-bottom: 0.1cm !important;
+  }
+}
+
+/* Ensure proper font rendering in PDF */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

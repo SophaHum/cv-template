@@ -15,13 +15,13 @@ function WorkExperience({
 }) {
   return (
     <div className="work-experience print:keep-together mb-6 print:mb-2 hover:bg-gray-50 p-4 rounded-lg transition-colors print:hover:bg-transparent print:p-0">
-      <h3 className="text-xl font-semibold text-gray-900 print:text-[14px]">
+      <h3 className="text-xl font-semibold text-gray-900 print:text-[16px]">
         {title}
       </h3>
-      <div className="text-base text-blue-600 print:text-[12px] mb-2 font-medium">
+      <div className="text-base text-blue-600 print:text-[16px] print:mb-1 font-medium">
         {company} | {period}
       </div>
-      <ul className="list-disc pl-5 text-base text-gray-700 space-y-2 marker:text-blue-500 print:text-[12px] print:space-y-0.5 print:marker:text-gray-500">
+      <ul className="list-disc pl-5 text-base text-gray-700 space-y-2 marker:text-blue-500 print:text-[16px] print:space-y-0.5 print:leading-[1.2] print:marker:text-gray-500">
         {responsibilities.map((resp, index) => (
           <li key={index} className="pl-1">
             {resp}
@@ -43,10 +43,10 @@ function Section({
 }) {
   return (
     <section className={`${className} mb-8 print:mb-2`}>
-      <h2 className="text-2xl font-bold text-blue-900 mb-4 print:text-base print:mb-1 print:text-gray-900">
+      <h2 className="text-2xl font-bold text-blue-900 mb-4 print:text-[16px] print:mb-1 print:text-gray-900">
         {title}
       </h2>
-      <div className="print:mt-1">{children}</div>
+      <div className="print:mt-0">{children}</div>
     </section>
   );
 }
@@ -62,11 +62,11 @@ export default function CV() {
           Download CV as PDF
         </button>
 
-        <div className="max-w-4xl mx-auto p-8 print:p-0 bg-white shadow-xl rounded-xl print:shadow-none print:rounded-none">
-          <div className="print:min-h-0">
-            <div className="bg-gradient-to-r from-blue-700 to-blue-900 text-white p-8 rounded-xl print:rounded-none print:p-4 shadow-lg print:shadow-none">
+        <div className="max-w-4xl mx-auto p-8 print:p-0 bg-white shadow-xl rounded-xl print:shadow-none print:rounded-md">
+          <div className="print:min-h-0 print:rounded-md">
+            <div className="bg-gradient-to-r from-blue-700 to-blue-900 text-white p-8 rounded-xl print:rounded-xl print:p-3 shadow-lg print:shadow-none">
               <div className="flex items-center gap-6 print:gap-4">
-                <div className="relative w-32 h-32 print:w-20 print:h-20 rounded-full overflow-hidden border-4 border-white/30 shadow-xl print:shadow-none print:border-2">
+                <div className="relative w-32 h-32 print:h-58 print:w-58 rounded-full overflow-hidden border-4 border-white/30 shadow-xl print:shadow-none print:border-2">
                   <Image
                     src="/Sopha.JPG"
                     alt="Profile"
@@ -75,15 +75,15 @@ export default function CV() {
                   />
                 </div>
                 <div>
-                  <h1 className="text-4xl print:text-3xl font-bold mb-2 print:mb-0">
+                  <h1 className="text-4xl print:text-2xl font-bold mb-2 print:mb-0">
                     HUM SOPHA
                   </h1>
-                  <p className="text-2xl print:text-xl text-blue-200 font-medium">
+                  <p className="text-2xl print:text-lg text-blue-200 font-medium">
                     Web Developer
                   </p>
                 </div>
               </div>
-              <div className="mt-6 print:mt-3 flex flex-wrap gap-4 print:gap-2 text-sm print:text-[12px]">
+              <div className="mt-6 print:mt-3 flex flex-wrap gap-4 print:gap-2 text-base print:text-[16px]">
                 <ContactInfo
                   icon={<Mail className="w-5 h-5 print:w-4 print:h-4" />}
                   text="sopha.humm@gmail.com"
@@ -114,9 +114,9 @@ export default function CV() {
               </div>
             </div>
 
-            <div className="p-8 print:p-0 print:mt-2">
+            <div className="p-8 print:p-0 print:mt-1">
               <Section title="Professional Summary">
-                <p className="text-base print:text-[12px] text-gray-700 leading-relaxed">
+                <p className="text-base print:text-[16px] text-gray-700 leading-relaxed print:leading-[1.3]">
                   Results-driven Web Developer with over 4 years of experience
                   at Peth Yoeung Co., Ltd, demonstrating progressive growth from
                   intern to full-fledged developer. Proven expertise in
@@ -181,7 +181,7 @@ export default function CV() {
                 title="Personal Projects"
                 className="print:break-inside-avoid page-break-before-auto"
               >
-                <ul className="list-disc pl-5 text-sm text-gray-700 space-y-2 marker:text-gray-500">
+                <ul className="list-disc pl-5 text-base text-gray-700 space-y-2 marker:text-gray-500 print:space-y-1 print:text-[16px] print:leading-tight">
                   <li>
                     <span className="font-medium">User Management Application</span>
                     <p>A full-stack application using Go for the backend API and Next.js for the frontend. Implemented secure user authentication, role-based access control, and CRUD operations. Features include user profile management, admin dashboard, and API rate limiting.</p>
@@ -191,15 +191,7 @@ export default function CV() {
                     <p>Built a modern chat application using Laravel and Vue.js with WebSocket integration. Implemented features including real-time message delivery, user authentication, message history, and real-time notifications. Designed with responsive UI for seamless communication across devices.</p>
                   </li>
                   <li>
-                    <span className="font-medium">Point-Of-Sale System</span>
-                    <p>Created a modern POS system using Laravel and Vue.js. Implemented features for inventory management, sales tracking, receipt generation, and real-time reporting. Designed responsive UI.</p>
-                  </li>
-                  <li>
-                    <span className="font-medium">E-commerce Platform with Microservices</span>
-                    <p>Developed a scalable e-commerce platform using microservices architecture. Built with Node.js, Docker, and Kubernetes. Implemented services for product catalog, shopping cart, payment processing, and order management. Integrated with Stripe for payments and Redis for caching.</p>
-                  </li>
-                  <li>
-                    <span className="font-medium">Basic DevOps Learning Project</span>
+                    <span className="font-medium">Basic DevOps Learning Project (In Progress)</span>
                     <p>Built a simple but effective CI/CD pipeline using GitHub Actions for automation. Containerized a Node.js application using Docker, implemented basic monitoring with Prometheus and Grafana. Used Docker Compose for local development and testing. Focused on learning core DevOps concepts including containerization, continuous integration, and basic monitoring.</p>
                   </li>
                 </ul>
@@ -209,7 +201,7 @@ export default function CV() {
                 title="Skills"
                 className="print:break-inside-avoid page-break-before-auto"
               >
-                <div className="grid grid-cols-1 md:grid-cols-3 print:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 print:grid-cols-3 print:gap-2 gap-6">
                   <SkillCategory
                     title="Front-End"
                     skills={[
@@ -222,7 +214,6 @@ export default function CV() {
                       "Vue.js",
                       "Next.js",
                       "Nuxt.js",
-                      "Astro.js",
                     ]}
                   />
                   <SkillCategory
@@ -235,18 +226,17 @@ export default function CV() {
                       "Java",
                       "C#",
                       "PostgreSQL",
-                      "MySQL",
+                      "MangoDB",
                     ]}
                   />
                   <SkillCategory
                     title="DevOps"
                     skills={[
-                      "Linux OS",
+                      "Ubuntu OS",
                       "Git",
-                      "GitHub",
+                      "GitHub Actions",
                       "Docker",
                       "Jenkins",
-                      "Ansible",
                       "Kubernetes",
                       "Grafana",
                       "AWS",
@@ -273,31 +263,51 @@ export default function CV() {
               </Section>
 
               <Section title="Achievements">
-                <ul className="list-disc pl-5 text-sm text-gray-700 space-y-2 marker:text-gray-500">
+                <ul className="list-disc pl-5 text-base text-gray-700 space-y-2 marker:text-gray-500">
                   <li>
                     Hard Work Certificate - Awarded for successfully completing
                     an urgent project overnight
                   </li>
                   <li>
                     3-Year Service Recognition - Awarded for dedicated service
-                    at Peth Yoeung Co., Ltd (2023)
-                  </li>
-                  <li>
-                    Web Development Professional Certificate - Awarded upon
-                    completion of internship at Peth Yoeung Co., Ltd (2021)
+                    at Peth Yoeung Co., Ltd (2024)
                   </li>
                 </ul>
               </Section>
 
               <Section title="Languages">
-                <ul className="list-disc pl-5 text-sm text-gray-700 space-y-2 marker:text-gray-500">
+                <ul className="list-disc pl-5 text-base text-gray-700 space-y-2 marker:text-gray-500">
                   <li>Khmer (Native)</li>
                   <li>English (Professional working proficiency)</li>
                 </ul>
               </Section>
 
               <Section title="References">
-                <p className="text-sm text-gray-700">Available upon request.</p>
+                {/* <p className="text-sm text-gray-700">Available upon request.</p> */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 print:gap-2">
+                  <div>
+                    <h3 className="text-lg font-semibold text-blue-900 mb-1 print:text-[16px] print:mb-0.5">
+                      Mr. KHUCH Penh
+                    </h3>
+                    <p className="text-base text-blue-600 font-medium print:text-[16px]">
+                      Project Lead Manager, Peth Yoeung Co., Ltd
+                    </p>
+                    <p className="text-base text-gray-600 print:text-[16px]"> (+855) 10 700 555</p>
+                    <p className="text-base text-gray-600 print:text-[16px]">
+                      </p>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-blue-900 mb-1 print:text-[16px] print:mb-0.5">
+                      Mrs. KOL Kagnara
+                    </h3>
+                    <p className="text-base text-blue-600 font-medium print:text-[16px]">
+                      Project Manager, Peth Yoeung Co., Ltd
+                    </p>
+                    <p className="text-base text-gray-600 print:text-[16px]"> (+855) 70 809 329</p>
+                    <p className="text-base text-gray-600 print:text-[16px]">
+                      </p>  
+                  </div>
+                  </div>
               </Section>
             </div>
           </div>
@@ -340,12 +350,12 @@ function ContactInfo({
 function SkillCategory({ title, skills }: { title: string; skills: string[] }) {
   return (
     <div className="print:break-inside-avoid bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-colors print:bg-transparent print:p-0 print:hover:bg-transparent">
-      <h3 className="text-lg font-semibold text-blue-900 mb-3 print:text-[14px] print:text-gray-900 print:mb-1">
+      <h3 className="text-lg font-semibold text-blue-900 mb-3 print:text-[16px] print:text-gray-900 print:mb-1">
         {title}
       </h3>
       <ul className="space-y-1.5 print:space-y-0.5">
         {skills.map((skill, index) => (
-          <li key={index} className="text-base text-gray-700 print:text-[12px]">
+          <li key={index} className="text-base text-gray-700 print:text-[16px] print:leading-[1.2]">
             {skill}
           </li>
         ))}
@@ -364,14 +374,14 @@ function Education({
   period: string;
 }) {
   return (
-    <div className="mb-4 last:mb-0 hover:bg-gray-50 p-4 rounded-lg transition-colors print:hover:bg-transparent print:p-0">
-      <h3 className="text-lg font-semibold text-gray-900 print:text-[14px]">
+    <div className="mb-4 last:mb-0 hover:bg-gray-50 p-4 rounded-lg transition-colors print:hover:bg-transparent print:p-0 print:mb-1">
+      <h3 className="text-lg font-semibold text-gray-900 print:text-[16px]">
         {degree}
       </h3>
-      <p className="text-base text-blue-600 print:text-[12px] mb-1 font-medium">
+      <p className="text-base text-blue-600 print:text-[16px] print:mb-0 font-medium">
         {school}
       </p>
-      <p className="text-base text-gray-600 print:text-[12px]">{period}</p>
+      <p className="text-base text-gray-600 print:text-[16px]">{period}</p>
     </div>
   );
 }
