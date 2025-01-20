@@ -192,7 +192,7 @@ export default function CV() {
                   </li>
                   <li>
                     <span className="font-medium">Basic DevOps Learning Project (In Progress)</span>
-                    <p>Built a simple but effective CI/CD pipeline using GitHub Actions for automation. Containerized a Node.js application using Docker, implemented basic monitoring with Prometheus and Grafana. Used Docker Compose for local development and testing. Focused on learning core DevOps concepts including containerization, continuous integration, and basic monitoring.</p>
+                    <p>Built a simple but effective CI/CD pipeline using GitHub Actions for automation. Containerized a Node.js application using Docker, implemented basic monitoring with Grafana. Used Docker Compose for local development and testing. Focused on learning core DevOps concepts including containerization, continuous integration, and basic monitoring.</p>
                   </li>
                 </ul>
               </Section>
@@ -213,7 +213,7 @@ export default function CV() {
                       "React.js",
                       "Vue.js",
                       "Next.js",
-                      "Nuxt.js",
+                      // "Nuxt.js",
                     ]}
                   />
                   <SkillCategory
@@ -222,9 +222,9 @@ export default function CV() {
                       "Node.js",
                       "PHP",
                       "Golang",
-                      "Python",
-                      "Java",
-                      "C#",
+                      // "Python",
+                      // "Java",
+                      // "C#",
                       "PostgreSQL",
                       "MangoDB",
                     ]}
@@ -234,11 +234,11 @@ export default function CV() {
                     skills={[
                       "Ubuntu OS",
                       "Git",
-                      "GitHub Actions",
+                      // "GitHub Actions",
                       "Docker",
-                      "Jenkins",
+                      // "Jenkins",
                       "Kubernetes",
-                      "Grafana",
+                      // "Grafana",
                       "AWS",
                       "Vercel",
                     ]}
